@@ -1,4 +1,4 @@
-const { tryCatcher } = require("../utility/ErrorHandler.js");
+const { tryCatcher } = require("../utility/errorHandler.js");
 const User=require('../model/user.js')
 const bcrypt=require('bcrypt');
 const { generateToken } = require("../utility/feature.js");
@@ -30,3 +30,5 @@ const loginHandler=tryCatcher(async(req,res,next)=>{
     generateToken(res,exUser,200,"Welcome Back");
 
 })
+
+module.exports={SignupHandler,loginHandler}
